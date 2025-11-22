@@ -3,10 +3,6 @@ import { useState } from 'react'
 
 function Hook1s(){
     let [count, setCount] = useState(15);
-
-    // function addvalue(){
-    //     setCount(count + 1)
-    // }
     return (
         <>
         <h1>Hello Hooks</h1>
@@ -18,8 +14,23 @@ function Hook1s(){
         <h3>Counter Project Value2 : {count}</h3>
         <h3>Counter Project Value3 : {count}</h3>
         <div className="btns">
-             <button className="addValue" onClick={()=> setCount(count + 1)}>ADD VALUE : {count}</button>
-             <button className="subValue"  onClick={()=> setCount(count - 1)}>SUB VALUE : {count}</button>
+             <button className="addValue" onClick={()=> {
+                 if( count < 20 ){
+                    setCount(count + 1)}}}>
+                    ADD VALUE : {count}
+                </button>
+
+
+<button className="addValue" onClick={() => {
+           if ( count < 20 ){
+		   setCount(count + 1)
+		   }}}>add vlaue</button>
+                
+             <button className="subValue"  onClick={()=> {
+                if ( count > 0){
+                    setCount(count - 1)
+                }
+             }}>SUB VALUE : {count}</button>
         </div>
         </>
     )
